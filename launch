@@ -1,0 +1,27 @@
+#!/bin/sh
+
+usage(){
+	printf '%s\n' "usage: launch [-h --help] [program]"
+	printf '%s\n\t%s\n' "intel, intellij" "Open intellij"	
+	printf '%s\n\t%s\n' "sql, mysql-workbench" "Open MySQLWorkbench"
+	printf '%s\n\t%s\n' "-h, --help" "Show this help and exit"
+}
+
+case $1 in
+	intel | intellij )
+		nohup /home/baby/Documents/programs/idea-IU-182.4892.20/bin/idea.sh &
+		exit
+		;;
+	sql | mysql-workbench )
+		nohup mysql-workbench &
+		exit
+		;;
+	-h | --help )
+		usage
+		exit
+		;;
+	* )
+		printf '%s\n\n' "ERROR! Command not found, use one of the following"
+		usage
+		exit 1
+esac
