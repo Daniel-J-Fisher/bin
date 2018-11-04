@@ -9,11 +9,11 @@ usage(){
 
 case $1 in
 	intel | intellij )
-		nohup /home/baby/Documents/programs/idea-IU-182.4892.20/bin/idea.sh &
+		nohup /home/baby/Documents/programs/idea-IU-182.4892.20/bin/idea.sh >/dev/null 2>&1 &
 		exit
 		;;
 	sql | mysql-workbench )
-		nohup mysql-workbench &
+		nohup mysql-workbench >/dev/null 2>&1 &
 		exit
 		;;
 	-h | --help )
