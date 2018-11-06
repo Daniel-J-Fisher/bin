@@ -4,6 +4,7 @@ usage(){
 	printf '%s\n' "usage: launch [-h --help] [program]"
 	printf '%s\n\t%s\n' "intel, intellij" "Open intellij"	
 	printf '%s\n\t%s\n' "sql, mysql-workbench" "Open MySQLWorkbench"
+	printf '%s\n\t%s\n' "post, postman" "Open Postman"
 	printf '%s\n\t%s\n' "-h, --help" "Show this help and exit"
 }
 
@@ -15,6 +16,9 @@ case $1 in
 	sql | mysql-workbench )
 		nohup mysql-workbench >/dev/null 2>&1 &
 		exit
+		;;
+	post | postman )
+		nohup /home/baby/Documents/programs/Postman/app/Postman >/dev/null 2>&1 &
 		;;
 	-h | --help )
 		usage
